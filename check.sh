@@ -1,12 +1,14 @@
 #!/bin/bash
 
 function checkInput {
-    echo "continous..."
+    echo "press [enter] key to continous ..."
     read input
     if [[ "$input" == "n" ]]; then
       exit
     fi
 }
+
+echo "When the step has been error or need to stop,please press [n] or Ctrl+C"
 
 nix flake check
 checkInput
