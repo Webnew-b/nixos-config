@@ -7,6 +7,10 @@ lsp.tsserver.setup{
     capabilities = capabilities
 }
 
+lsp.bashls.setup{
+    capabilities = capabilities
+}
+
 lsp.lua_ls.setup {
   capabilities = capabilities,
   on_init = function(client)

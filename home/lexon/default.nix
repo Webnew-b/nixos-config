@@ -119,6 +119,10 @@ in
     #haskell
     haskellPackages.ghc
     haskellPackages.cabal-install
+    #node
+    nodejs
+    nodePackages.typescript
+    nodePackages.bash-language-server
   ];
 
   # git 相关配置
