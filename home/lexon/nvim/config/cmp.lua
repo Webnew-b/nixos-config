@@ -1,4 +1,7 @@
 local cmp = require'cmp'
+
+vim.api.nvim_set_hl(0, 'CmpNormal', { bg = '#002b36', fg = '#859900' })
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -27,6 +30,15 @@ cmp.setup({
   }),
   experimental = {
     ghost_text = true,
+  },
+  -- config windows
+  window = {
+    completion = cmp.config.window.bordered({
+      winhighlight = 'Normal:CmpNormal' -- 设置补全框的高亮组
+    }),
+    documentation = cmp.config.window.bordered({
+      winhighlight = 'Normal:CmpNormal' -- 设置文档窗口的高亮组
+    }),
   }
 })
 

@@ -80,14 +80,12 @@
     tcpdump
     xclip
     nerdfonts
-    nerdfonts-fira-code
   ];
 
   #fonts
   fonts = {
     packages = with pkgs; [
-      nerdfonts
-      nerdfonts-fira-code
+      pkgs.nerdfonts
       noto-fonts
       source-han-sans
       source-han-serif
