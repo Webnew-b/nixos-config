@@ -105,6 +105,9 @@ in
     pciutils # lspci
     usbutils # lsusb
 
+    # lsp
+    lua-language-server
+
     #env
     #docker
     docker
