@@ -8,7 +8,8 @@ function checkInput {
     fi
 }
 
-echo "When the step has been error or need to stop,please press [n] or Ctrl+C"
+echo "When the step has been error or need to stop"
+echo "please press [n] or Ctrl+C to stop it"
 
 nix flake check
 checkInput

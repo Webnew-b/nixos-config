@@ -171,6 +171,10 @@ in
     export GOROOT="${goConfig.goRoot}";
     export GOPROXY="${goConfig.goProxy}";
     export DISPLAY="${networkSettings.ip}":0;
+
+    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+      eval "$(ssh-agent -s)"
+    fi
     '';
 
     # TODO 设置一些别名方便使用，你可以根据自己的需要进行增删
