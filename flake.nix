@@ -43,6 +43,7 @@
       dns = [ "8.8.8.8" "4.2.2.2" ];
       allowTCPPorts = [
         22
+        2017
       ] ++ (pkgs.lib.range 6000 6063);
     };
 

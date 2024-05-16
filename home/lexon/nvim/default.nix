@@ -5,11 +5,13 @@
 
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
-
+        (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+        
         cmp-nvim-lsp
         cmp-buffer
         cmp-path
         cmp-cmdline
+        cmp-treesitter
         nvim-cmp
         cmp-spell
 
@@ -33,6 +35,7 @@
           "basic"
           "cmp"
           "tree"
+          "treesitter"
         ]);
       in ''
         lua << EOF

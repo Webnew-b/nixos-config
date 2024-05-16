@@ -68,6 +68,8 @@ in
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc  # it is a calculator for the IPv4/v6 addresses
+    v2ray #proxy client
+    v2raya
 
     # misc
     cowsay
@@ -104,6 +106,8 @@ in
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+  
 
     # lsp
     lua-language-server
@@ -170,7 +174,6 @@ in
     export GOBIN="${goConfig.goBin}";
     export GOROOT="${goConfig.goRoot}";
     export GOPROXY="${goConfig.goProxy}";
-    export DISPLAY="${networkSettings.ip}":0;
 
     if ! pgrep -u "$USER" ssh-agent > /dev/null; then
       eval "$(ssh-agent -s)"
