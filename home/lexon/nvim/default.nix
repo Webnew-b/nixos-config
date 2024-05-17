@@ -38,6 +38,7 @@
           "treesitter"
         ]);
       in ''
+        set clipboard+=unnamedplus
         lua << EOF
         ${luaConfig}
         EOF

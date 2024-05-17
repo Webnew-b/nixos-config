@@ -1,7 +1,7 @@
 require'nvim-treesitter.configs'.setup {
 
   highlight = {
-    enable = true,                -- 启用语法高亮
+    enable = false,                -- 启用语法高亮
   },
   rainbow = {
     enable = true,

@@ -111,6 +111,7 @@ in
 
     # lsp
     lua-language-server
+    nodePackages.typescript-language-server
 
     #env
     #docker
@@ -172,7 +173,6 @@ in
     export GOPATH="${goConfig.goPath}";
     export GO111MODULE="${goConfig.goModule}";
     export GOBIN="${goConfig.goBin}";
-    export GOROOT="${goConfig.goRoot}";
     export GOPROXY="${goConfig.goProxy}";
 
     if ! pgrep -u "$USER" ssh-agent > /dev/null; then
