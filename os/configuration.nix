@@ -63,6 +63,16 @@
 
   # --- services end ---
 
+  # --- docker ---
+
+  # enable docker service
+  virtualisation.docker.enable = true;
+
+  # allow user use docker
+  virtualisation.docker.rootless.enable = true;
+
+  # --- docker end ---
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -80,6 +90,7 @@
     tcpdump
     xclip
     nerdfonts
+    docker
   ];
 
   #fonts

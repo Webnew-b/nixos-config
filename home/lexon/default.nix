@@ -116,6 +116,7 @@ in
     #env
     #docker
     docker
+    docker-compose
     #python
     python3
     #go
