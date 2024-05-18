@@ -1,5 +1,6 @@
 local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local util = require 'lspconfig.util'
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -19,20 +20,45 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- lsp.bufls.setup{
+--   cmd = {"bufls","serve"},
+--   filetypes = { 'proto' },
+--   root_dir = function(fname)
+--     return util.root_pattern('buf.work.yaml', '.git')(fname)
+--   end,
+--   description = [[https://github.com/bufbuild/buf-language-server]],
+--   default_config = {
+--     root_dir = [[root_pattern("buf.work.yaml", ".git")]],
+--   },
+--   on_attach = on_attach,
+-- }
+
+-- require'lspconfig'.clangd.setup{
+--   cmd = { "clangd", "--background-index" },
+--   filetypes = { "proto" },
+--   root_dir = require'lspconfig'.util.root_pattern("buf.work.yaml", ".git"),
+--   single_file_support = true,
+--   on_attach = function(client)
+--     client.resolved_capabilities.document_formatting = false
+--   end
+-- }
+
 lsp.gopls.setup{
   cmd = {'gopls'},
   -- for postfix snippets and analyzers
   capabilities = capabilities,
   settings = {
-      gopls = {
+    gopls = {
       experimentalPostfixCompletions = true,
       analyses = {
           unusedparams = true,
           shadow = true,
       },
       staticcheck = true,
-      },
+      completeUnimported = true,
+      usePlaceholders = true,
     },
+  },
   on_attach = on_attach,
 }
 
@@ -44,10 +70,6 @@ lsp.tsserver.setup{
     local ts_utils = require("nvim-lsp-ts-utils")
     ts_utils.setup({})
     ts_utils.setup_client(client)
-
-    buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-    buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-    buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
 
     on_attach(client, bufnr)
   end,

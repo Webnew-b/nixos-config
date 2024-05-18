@@ -100,18 +100,21 @@ in
     ltrace # library call monitoring
     lsof # list open files
 
+    cmake
+    
+
     # system tools
     sysstat
     lm_sensors # for `sensors` command
     ethtool
     pciutils # lspci
-    usbutils # lsusb
-
-  
+    usbutils # lsusb 
 
     # lsp
     lua-language-server
     nodePackages.typescript-language-server
+    buf-language-server
+    buf
 
     #env
     #docker
@@ -122,6 +125,8 @@ in
     #go
     gopls
     protobuf
+    protoc-gen-go
+    protoc-gen-go-grpc
     #haskell
     haskellPackages.ghc
     haskellPackages.cabal-install
@@ -129,6 +134,9 @@ in
     nodejs
     nodePackages.typescript
     nodePackages.bash-language-server
+    #c
+    clang
+    clang-tools
   ];
 
   # git 相关配置
