@@ -116,7 +116,6 @@ in
     buf-language-server
     buf
     haskellPackages.haskell-language-server
-    haskellPackages.haskell-language-server-wrapper
 
     #env
     #docker

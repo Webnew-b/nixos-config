@@ -28,7 +28,7 @@
         system = "x86_64-linux";
         hostname = "lexon";
         profile = "lexon";
-        timezone = "Asia/HongKong";
+        timezone = "Asia/Shanghai";
         locale = "en_US.UTF-8";
         version = "24.05";
         desktopUser = "lexon";
