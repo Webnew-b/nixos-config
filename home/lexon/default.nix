@@ -115,6 +115,8 @@ in
     nodePackages.typescript-language-server
     buf-language-server
     buf
+    haskellPackages.haskell-language-server
+    haskellPackages.haskell-language-server-wrapper
 
     #env
     #docker
@@ -130,6 +132,8 @@ in
     #haskell
     haskellPackages.ghc
     haskellPackages.cabal-install
+    haskellPackages.stack
+    haskellPackages.hoogle
     #node
     nodejs
     nodePackages.typescript

@@ -43,6 +43,9 @@ end
 --   end
 -- }
 
+lsp.hls.setup{
+}
+
 lsp.gopls.setup{
   cmd = {'gopls'},
   -- for postfix snippets and analyzers
