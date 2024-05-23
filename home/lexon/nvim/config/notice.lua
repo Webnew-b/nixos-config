@@ -16,11 +16,17 @@ notify.setup({
   level = "TRACE", 
 })
 
+
 require("noice").setup({
   lsp = {
       progress = {
           enabled = false,
       },
+      override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+      }
   },
   presets = {
       bottom_search = false,
@@ -39,6 +45,19 @@ require("noice").setup({
   },
   health = {
       checker = false,
+  },
+  routes = {
+    {
+      filter = {
+        event = "lsp",
+        kind = "progress",
+        cond = function(message)
+          local client = vim.tbl_get(message.opts, "progress", "client")
+          return client == "lua_ls"
+        end,
+      },
+      opts = { skip = true },
+    },
   },
 }) 
 
