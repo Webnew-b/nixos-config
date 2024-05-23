@@ -96,6 +96,7 @@
     xclip
     nerdfonts
     docker
+    openssl
   ];
 
   #fonts
