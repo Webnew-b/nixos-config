@@ -41,9 +41,9 @@ vim.o.cmdheight = 2
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
 vim.bo.autoread = true
--- 禁止折行
-vim.o.wrap = false
-vim.wo.wrap = false
+-- line wrap
+vim.o.wrap = true
+vim.wo.wrap = true
 -- 行结尾可以跳到下一行
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 -- 允许隐藏被修改过的buffer
@@ -99,3 +99,9 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
+
+-- 设置浮动窗口的背景颜色
+vim.cmd [[hi NormalFloat guibg=#002b36]]
+-- 设置浮动窗口的边框颜色
+vim.cmd [[hi FloatBorder guifg=white guibg=#002b36]]
+

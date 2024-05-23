@@ -6,7 +6,11 @@
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
         (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-        
+
+        nui-nvim
+        nvim-notify
+        noice-nvim
+
         cmp-nvim-lsp
         cmp-buffer
         cmp-path
@@ -36,6 +40,7 @@
           "cmp"
           "tree"
           "treesitter"
+          "notice"
         ]);
       in ''
         set clipboard+=unnamedplus
