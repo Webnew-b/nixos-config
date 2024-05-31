@@ -105,3 +105,5 @@ vim.cmd [[hi NormalFloat guibg=#002b36]]
 -- 设置浮动窗口的边框颜色
 vim.cmd [[hi FloatBorder guifg=white guibg=#002b36]]
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '

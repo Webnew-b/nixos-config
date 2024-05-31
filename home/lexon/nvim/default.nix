@@ -23,6 +23,7 @@
         vim-vsnip
         nvim-tree-lua
         nvim-web-devicons
+        which-key-nvim
       ];
 
       extraPackages = with pkgs; [gcc ripgrep fd statix deadnix];
