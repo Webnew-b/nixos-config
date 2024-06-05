@@ -144,6 +144,11 @@ in
     rustc
     cargo
     rust-analyzer
+    #solana
+    solana-cli
+    anchor
+    #yarn
+    yarn
   ];
 
   # git 相关配置
