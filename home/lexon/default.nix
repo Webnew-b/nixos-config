@@ -140,6 +140,10 @@ in
     #c
     clang
     clang-tools
+    #rust
+    rustc
+    cargo
+    rust-analyzer
   ];
 
   # git 相关配置

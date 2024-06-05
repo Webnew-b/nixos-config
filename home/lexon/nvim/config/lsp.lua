@@ -20,6 +20,19 @@ local on_attach = function(client, bufnr)
 
 end
 
+lsp.rust_analyzer.setup{
+  settings = {
+    ["rust-analyzer"] = {
+        cargo = {
+          loadOutDirsFromCheck = true,
+        },
+        procMacro = {
+          enable = true,
+        },
+    },
+  }
+}
+
 -- lsp.bufls.setup{
 --   cmd = {"bufls","serve"},
 --   filetypes = { 'proto' },

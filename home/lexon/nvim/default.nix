@@ -24,6 +24,9 @@
         nvim-tree-lua
         nvim-web-devicons
         which-key-nvim
+
+        telescope-nvim
+        telescope-fzy-native-nvim
       ];
 
       extraPackages = with pkgs; [gcc ripgrep fd statix deadnix];
