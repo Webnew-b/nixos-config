@@ -6,6 +6,7 @@
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
         (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+        lspsaga-nvim
 
         nui-nvim
         nvim-notify
@@ -27,6 +28,9 @@
 
         telescope-nvim
         telescope-fzy-native-nvim
+
+        nvim-ts-autotag
+        nvim-autopairs
       ];
 
       extraPackages = with pkgs; [gcc ripgrep fd statix deadnix];

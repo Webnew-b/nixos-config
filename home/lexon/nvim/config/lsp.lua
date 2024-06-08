@@ -1,6 +1,9 @@
 local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local util = require 'lspconfig.util'
+local saga = require("lspsaga")
+-- local util = require 'lspconfig.util'
+--
+
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -19,6 +22,14 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 
 end
+
+saga.setup({
+    definition = {
+      keys = {
+        edit = 'o'
+      }
+    }
+})
 
 lsp.rust_analyzer.setup{
   settings = {

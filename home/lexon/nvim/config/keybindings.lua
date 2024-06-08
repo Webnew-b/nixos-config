@@ -27,13 +27,21 @@ wk.setup({})
 
 wk.register({
   ["<leader>"] = {
-    g = {
-      o = {"<cmd>NvimTreeOpen<CR>","NvimTreeOpen"},
-      c = {"<cmd>NvimTreeClose<CR>","NvimTreeClose"}
+    n = {
+      ['to'] = {"<cmd>NvimTreeOpen<CR>","NvimTreeOpen"},
+      ['tc'] = {"<cmd>NvimTreeClose<CR>","NvimTreeClose"}
     },
     l = {
-      e = {"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>","to check the error"}
-    }
+      j = {"<cmd>Lspsaga diagnostic_jump_next<CR>","jump next file"},
+      p = {"<cmd>Lspsaga diagnostic_jump_prev<CR>","jump previous file"},
+      c = {"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>","to check the error"},
+      k = {"<Cmd>Lspsaga hover_doc<CR>","hover doc"},
+      ['gf'] = {"<Cmd>Lspsaga finder<CR>","finder"},
+      ['sh'] = {"<Cmd>Lspsaga signature_help<CR>","signature help"},
+      ['gd'] = {"<Cmd>Lspsaga peek_definition<CR>","preview definition"},
+      ['rn'] = {"<Cmd>Lspsaga rename<CR>","rename"}
+    },
+    ["ot"] = {"<Cmd>Lspsaga term_toggle<CR>","open terminal"}
   }
 })
 
