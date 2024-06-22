@@ -68,6 +68,20 @@ lsp.rust_analyzer.setup{
 -- }
 
 lsp.hls.setup{
+  cmd = {"haskell-language-server-wrapper","--lsp"},
+  settings = {
+    haskell = {
+      cabel = {
+        cabelPath = "cabel",
+        cabalV2Build = true,
+        cabalSandboxConfig = nil,
+        cabalConfig = nil,
+      },
+      ghc = {
+        path = "ghc"
+      }
+    }
+  }
 }
 
 lsp.gopls.setup{
