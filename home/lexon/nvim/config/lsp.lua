@@ -120,6 +120,30 @@ lsp.bashls.setup{
     capabilities = capabilities
 }
 
+lsp.pyright.setup{
+    capabilities = capabilities,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    enabled = true,
+                    ignore = {'W391'},
+                    maxLineLength = 100
+                },
+                pylsp_mypy = {
+                    enabled = true,
+                },
+                pylsp_black = {
+                    enabled = true,
+                },
+                pylsp_isort = {
+                    enabled = true,
+                },
+            }
+        }
+    }
+}
+
 lsp.lua_ls.setup {
   capabilities = capabilities,
   on_init = function(client)

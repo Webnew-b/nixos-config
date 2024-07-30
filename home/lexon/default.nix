@@ -58,6 +58,7 @@ in
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    zlib
 
     # networking tools
     mtr # A network diagnostic tool
@@ -123,6 +124,8 @@ in
     docker-compose
     #python
     python3
+    python311Packages.python-lsp-server
+    nodePackages.pyright
     #go
     gopls
     protobuf
