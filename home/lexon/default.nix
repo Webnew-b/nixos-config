@@ -140,6 +140,7 @@ in
     nodejs
     nodePackages.typescript
     nodePackages.bash-language-server
+    nodePackages.pnpm
     #c
     clang
     clang-tools
