@@ -59,6 +59,7 @@ in
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     zlib
+    pkg-config
 
     # networking tools
     mtr # A network diagnostic tool
@@ -195,10 +196,13 @@ in
     # TODO 在这里添加你的自定义 bashrc 内容
     bashrcExtra = ''
     export PATH="$PATH:$HOME/bin:$HOME/.local/bin:${goConfig.goRoot}/bin"
+    export CARGO_HOME="$HOME/.cargo";
+    export RUSTUP_HOME="$HOME/.rustup";
     export GOPATH="${goConfig.goPath}";
     export GO111MODULE="${goConfig.goModule}";
     export GOBIN="${goConfig.goBin}";
     export GOPROXY="${goConfig.goProxy}";
+    export PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
 
     if ! pgrep -u "$USER" ssh-agent > /dev/null; then
       eval "$(ssh-agent -s)"
