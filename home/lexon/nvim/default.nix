@@ -31,6 +31,8 @@
 
         nvim-ts-autotag
         nvim-autopairs
+
+        rust-tools-nvim
       ];
 
       extraPackages = with pkgs; [gcc ripgrep fd statix deadnix];

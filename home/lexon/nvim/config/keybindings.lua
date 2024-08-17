@@ -41,7 +41,16 @@ wk.register({
       ['gd'] = {"<Cmd>Lspsaga peek_definition<CR>","preview definition"},
       ['rn'] = {"<Cmd>Lspsaga rename<CR>","rename"}
     },
-    ["ot"] = {"<Cmd>Lspsaga term_toggle<CR>","open terminal"}
+    ["ot"] = {"<Cmd>Lspsaga term_toggle<CR>","open terminal"},
+    t = {
+      ['f'] = {"<cmd>tabnew","open the file on new tab"},
+      n = {"<cmd>tabn<CR>","open the next tab"},
+      p = {"<cmd>tabp<CR>","open the pervious tab"},
+    },
+    s = {
+      p = {"<cmd>sp<CR>","Horizontal split window"},
+      v = {"<cmd>vsp<CR>","Vertcal split window"},
+    },
   }
 })
 

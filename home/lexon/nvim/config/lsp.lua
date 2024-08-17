@@ -34,8 +34,14 @@ saga.setup({
 lsp.rust_analyzer.setup{
   settings = {
     ["rust-analyzer"] = {
+        imports = {
+          granularity = {
+            group = "module",
+          },
+          prefix = "self",
+        },
         cargo = {
-          loadOutDirsFromCheck = true,
+          allFeatures = true,
         },
         procMacro = {
           enable = true,
@@ -43,6 +49,30 @@ lsp.rust_analyzer.setup{
     },
   }
 }
+
+require('rust-tools').setup({
+  tools = {
+    autoSetHints = true,
+    hover_with_actions = true,
+  },
+  server = {
+    settings = {
+      ["rust-analyzer"] = {
+        assist = {
+          importGranularity = "module",
+          importPrefix = "by_crate",
+        },
+        cargo = {
+          allFeatures = true,
+        },
+        procMacro = {
+          enable = true,
+        },
+      }
+    }
+  },
+})
+
 
 -- lsp.bufls.setup{
 --   cmd = {"bufls","serve"},
