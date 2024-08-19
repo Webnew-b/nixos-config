@@ -36,9 +36,12 @@ wk.register({
       p = {"<cmd>Lspsaga diagnostic_jump_prev<CR>","jump previous file"},
       c = {"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>","to check the error"},
       k = {"<Cmd>Lspsaga hover_doc<CR>","hover doc"},
-      ['gf'] = {"<Cmd>Lspsaga finder<CR>","finder"},
       ['sh'] = {"<Cmd>Lspsaga signature_help<CR>","signature help"},
-      ['gd'] = {"<Cmd>Lspsaga peek_definition<CR>","preview definition"},
+      g = {
+        d = {"<Cmd>Lspsaga peek_definition<CR>","preview definition"},
+        f = {"<Cmd>Lspsaga finder<CR>","finder"},
+        g = {"<cmd>lua vim.lsp.buf.definition()<CR>","go to the definition"}
+      },
       ['rn'] = {"<Cmd>Lspsaga rename<CR>","rename"}
     },
     ["ot"] = {"<Cmd>Lspsaga term_toggle<CR>","open terminal"},

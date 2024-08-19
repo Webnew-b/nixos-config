@@ -34,18 +34,21 @@ saga.setup({
 lsp.rust_analyzer.setup{
   settings = {
     ["rust-analyzer"] = {
-        imports = {
-          granularity = {
-            group = "module",
-          },
-          prefix = "self",
+      checkOnSave = {
+        command = "cargo make check"
+      },
+      imports = {
+        granularity = {
+          group = "module",
         },
-        cargo = {
-          allFeatures = true,
-        },
-        procMacro = {
-          enable = true,
-        },
+        prefix = "self",
+      },
+      cargo = {
+        allFeatures = true,
+      },
+      procMacro = {
+        enable = true,
+      },
     },
   }
 }
@@ -72,6 +75,7 @@ require('rust-tools').setup({
     }
   },
 })
+
 
 
 -- lsp.bufls.setup{

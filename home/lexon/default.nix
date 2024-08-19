@@ -149,6 +149,7 @@ in
     rustc
     cargo
     rust-analyzer
+    rustfmt
     #solana
     solana-cli
     anchor

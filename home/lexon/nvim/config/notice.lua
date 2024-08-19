@@ -43,6 +43,21 @@ require("noice").setup({
       view_history = "messages",
       view_search = "virtualtext",
   },
+  command = {
+    history = {
+      view = "split",
+      opts = { enter = true, format = "details" },
+      filter = {
+        any = {
+          { event = "notify" },
+          { error = true },
+          { warning = true },
+          { event = "msg_show", kind = { "" } },
+          { event = "lsp", kind = "message" },
+        },
+      },
+    },
+  },
   health = {
       checker = false,
   },
