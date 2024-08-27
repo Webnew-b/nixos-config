@@ -1,7 +1,7 @@
 require'nvim-treesitter.configs'.setup {
 
   highlight = {
-    enable = false,                -- 启用语法高亮
+    enable = true,                -- 启用语法高亮
   },
   rainbow = {
     enable = true,
@@ -18,6 +18,9 @@ require'nvim-treesitter.configs'.setup {
       scope_incremental = "grc",
       node_decremental = "grm",
     },
+  },
+  fold = {
+    enable = true,
   },
 
   parser_install_dir = vim.fn.stdpath('data') .. '/parsers',
@@ -36,3 +39,4 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+vim.o.foldmethod = 'expr'

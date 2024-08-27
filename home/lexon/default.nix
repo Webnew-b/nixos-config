@@ -135,7 +135,7 @@ in
     #haskell
     haskellPackages.ghc
     haskellPackages.cabal-install
-    haskellPackages.stack
+    stack
     haskellPackages.hoogle
     #node
     nodejs

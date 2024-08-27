@@ -14,11 +14,6 @@ map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 
-map("n","<leader>fed","<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>",opt)
-
-map("n","<leader>nto","<cmd>NvimTreeOpen<CR>",opt)
-map("n","<leader>ntc","<cmd>NvimTreeClose<CR>",opt)
-
 vim.g.mapleader = " "
 
 local wk = require("which-key")
