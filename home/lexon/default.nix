@@ -60,6 +60,7 @@ in
     fzf # A command-line fuzzy finder
     zlib
     pkg-config
+    nix-ld
 
     # networking tools
     mtr # A network diagnostic tool
@@ -198,6 +199,7 @@ in
     bashrcExtra = ''
     export PATH="$PATH:$HOME/bin:$HOME/.local/bin:${goConfig.goRoot}/bin"
     export CARGO_HOME="$HOME/.cargo";
+    export LD_LIBRARY_PATH="/nix/var/nix/profiles/default/lib";
     export RUSTUP_HOME="$HOME/.rustup";
     export GOPATH="${goConfig.goPath}";
     export GO111MODULE="${goConfig.goModule}";

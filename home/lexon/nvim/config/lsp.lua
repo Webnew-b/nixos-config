@@ -32,10 +32,12 @@ saga.setup({
 })
 
 lsp.rust_analyzer.setup{
+  root_dir = require('lspconfig/util').root_pattern('Cargo.toml', '.git'),
   settings = {
     ["rust-analyzer"] = {
       checkOnSave = {
-        command = "cargo make check"
+        enable = true,
+        command = "clippy"
       },
       imports = {
         granularity = {
@@ -44,11 +46,12 @@ lsp.rust_analyzer.setup{
         prefix = "self",
       },
       cargo = {
-        allFeatures = true,
+        allFeatures = false,
       },
       procMacro = {
         enable = true,
       },
+
     },
   }
 }
