@@ -46,7 +46,9 @@ lsp.rust_analyzer.setup{
         prefix = "self",
       },
       cargo = {
-        allFeatures = false,
+        allFeatures = true,
+        loadOutDirsFromCheck = true,
+        runBuildScripts = true,  -- 运行构建脚本以正确加载编译器生成的内容
       },
       procMacro = {
         enable = true,
