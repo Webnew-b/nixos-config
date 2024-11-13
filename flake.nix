@@ -40,7 +40,7 @@
       prefixLength = 24;
       gateway = "192.168.2.2";
       interface = "ens33";
-      dns = [ "8.8.8.8" "4.2.2.2" ];
+      dns = [ "192.168.1.200" "8.8.8.8" "4.2.2.2" ];
       allowTCPPorts = [
         22
         2017
