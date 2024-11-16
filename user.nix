@@ -4,7 +4,7 @@
     isNormalUser = true;
     home = "/home/lexon";
     group = "lexon";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
 
   };
   users.groups.lexon = {};
