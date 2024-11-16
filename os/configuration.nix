@@ -1,5 +1,4 @@
 ({ config, lib, pkgs,systemSettings, userSettings, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -40,7 +39,34 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
+  security.pki.certificates = [
+    ''
+-----BEGIN CERTIFICATE-----
+MIIDcTCCAlmgAwIBAgIUami8ArYn2RAOvPFc/vm99ZcWoRQwDQYJKoZIhvcNAQEL
+BQAwWTELMAkGA1UEBhMCQ04xCzAJBgNVBAgMAlNaMQswCQYDVQQHDAJTWjEXMBUG
+A1UECgwObGV4b25kZWxveS50b3AxFzAVBgNVBAMMDmxleG9uZGVsb3kudG9wMB4X
+DTI0MTExNTEyMzUyNloXDTI1MTExNTEyMzUyNlowWTELMAkGA1UEBhMCQ04xCzAJ
+BgNVBAgMAlNaMQswCQYDVQQHDAJTWjEXMBUGA1UECgwObGV4b25kZWxveS50b3Ax
+FzAVBgNVBAMMDmxleG9uZGVsb3kudG9wMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEA8D5ZhVIJz0YjiaUAnOb9NmT9ZG2GUmM70cqtAzVPAhkSMD82XDQF
+7tohQZkud2geYJydyHcB7phG5nIPXmrdQornfG9VD/M7Gj8hOtnpcz76Jg6NeOEu
+vrzCDj507Z/IcX1OXGExY0lIpud3uAYrGO4vqTCmXFkrw+b5qJ/Yy5gAh24+D/G9
+7xmMs5rjUvY1krfl7iORzjqr+fAoGZ3NeNMNsUjfs/cizj6vt8gsMX/2EMT7YskL
+0zuCyneG5cyQDbeFF0Wzam/+i84MWbFSUmmsWPpb9VePd2qkh+Eu4fDdsjQPqLYX
+88nks3nmQlwDD0JCPGNl4WIbzA5sUJvfPwIDAQABozEwLzAtBgNVHREEJjAkgg5s
+ZXhvbmRlbG95LnRvcIISd3d3LmxleG9uZGVsb3kudG9wMA0GCSqGSIb3DQEBCwUA
+A4IBAQAH2do0NmqeXa+pMyG5i21sowOKtPNMcduaoMfExY1stnMvTzZjI4UZeIyu
+z+xLcc803t2hGZxOuJsxG0Pn320rylEt4nJyOOOukfmJM+jjy004BHxmVv1j8b2I
+JsR6sOH6qWf+hOjHSrwLKPIyaqXEJ1b85BVlC8gxbyoCFzuA4taxdlXHuNJXeZKW
+FEtYarJuaQzZlol1OuGTJ9CUDr1QW3YvLvib+Lf8P7EiBhmftKDWbfR8Z8wcot0c
+rZ5DQE8M73lr5PEBm35L9cBqqwoaeVGjhaVPCg1fymC1ZF3gR9CwSd96DFPbubHN
+4vs0pZqB+fEskHHIj6XbaF0caUdY
+-----END CERTIFICATE-----
+    ''
+  ];
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
