@@ -51,6 +51,7 @@ in
     xz
     unzip
     p7zip
+    tcpdump
 
     # utils
     ripgrep # recursively searches directories for a regex pattern

@@ -12,9 +12,9 @@
 
   networking.nameservers = networkSettings.dns;
   # open sshd service port
+  # networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = networkSettings.allowTCPPorts;
-  networking.firewall.checkReversePath = "loose";
-  networking.firewall.allowedUDPPorts = [ 53 ];  # 允许 DNS 解析
+  networking.firewall.checkReversePath = false;
 
   networking.firewall.extraCommands = ''iptables -t nat -A POSTROUTING -s 172.17.0.0/16 ! -o docker0 -j MASQUERADE'';
     

@@ -45,9 +45,9 @@
       allowTCPPorts = [
         22
         2017
-        8080
         80
-      ] ++ (pkgs.lib.range 6000 6063);
+        52345
+      ] ++ (pkgs.lib.range 6000 6063) ++ (pkgs.lib.range 8080 8100);
     };
 
   in
