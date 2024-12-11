@@ -5,81 +5,30 @@ local saga = require("lspsaga")
 --
 
 
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-
+local function on_attach(client,buffer)
+  local keymap_opts = { buffer = buffer }
+-- Code navigation and shortcuts
+  vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", keymap_opts) -- preview definition
+  vim.keymap.set("n", "gh", "<cmd>Lspsaga hover_doc<CR>", keymap_opts) -- Displays hover information 
+  vim.keymap.set("n", "gi", "<cmd>Lspsaga incoming_calls<CR>", keymap_opts) -- Displays function or object incoming
+  vim.keymap.set("n", "go", "<cmd>Lspsaga outgoing_calls<CR>", keymap_opts) -- Displays function or object outgoing 
+  vim.keymap.set("n", "gd", vim.lsp.buf.type_definition, keymap_opts) -- Displays type definition
+  vim.keymap.set("n", "gw", vim.lsp.buf.workspace_symbol, keymap_opts) 
+  vim.keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", keymap_opts)
 end
 
 saga.setup({
-    definition = {
-      keys = {
-        edit = 'o'
-      }
-    }
-})
-
-lsp.rust_analyzer.setup{
-  root_dir = require('lspconfig/util').root_pattern('Cargo.toml', '.git'),
-  settings = {
-    ["rust-analyzer"] = {
-      checkOnSave = {
-        enable = true,
-        command = "clippy"
-      },
-      imports = {
-        granularity = {
-          group = "module",
-        },
-        prefix = "self",
-      },
-      cargo = {
-        allFeatures = true,
-        loadOutDirsFromCheck = true,
-        runBuildScripts = true,  -- 运行构建脚本以正确加载编译器生成的内容
-      },
-      procMacro = {
-        enable = true,
-      },
-
+  stmbols_in_winbar = {
+      enable = true,
+      folder_level = 2,
     },
-  }
-}
-
-require('rust-tools').setup({
-  tools = {
-    autoSetHints = true,
-    hover_with_actions = true,
-  },
-  server = {
-    settings = {
-      ["rust-analyzer"] = {
-        assist = {
-          importGranularity = "module",
-          importPrefix = "by_crate",
-        },
-        cargo = {
-          allFeatures = true,
-        },
-        procMacro = {
-          enable = true,
-        },
-      }
+  definition = {
+    keys = {
+      edit = 'o'
     }
-  },
+  }
 })
+
 
 
 
@@ -142,7 +91,7 @@ lsp.gopls.setup{
   on_attach = on_attach,
 }
 
-lsp.tsserver.setup{
+lsp.ts_ls.setup{
   on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false

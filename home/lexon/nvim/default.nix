@@ -45,6 +45,7 @@
         luaConfig = builtins.concatStringsSep "\n" (map luaRequire [
           "plugins"
           "lsp"
+          "lsp_rust"
           "keybindings"
           "basic"
           "cmp"

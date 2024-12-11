@@ -1,18 +1,8 @@
 local map = vim.keymap.set
 local opt = {noremap = true, silent = true }
 
-map("n", "sv", ":vsp<CR>", opt)
-map("n", "sh", ":sp<CR>", opt) -- have some problems
-map("n", "sc", "<C-w>c", opt) -- have some problems
-map("n", "so", "<C-w>o", opt) -- close others
-
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
-
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
 
 vim.g.mapleader = " "
 
@@ -23,16 +13,23 @@ wk.setup({})
 wk.register({
   ["<leader>"] = {
     n = {
-      ['to'] = {"<cmd>NvimTreeOpen<CR>","NvimTreeOpen"},
-      ['tc'] = {"<cmd>NvimTreeClose<CR>","NvimTreeClose"}
+      name = "floder tree and message",
+      n = {'<cmd>Noice<CR>',"Show the message history."},
+      t = {
+        name = "nvim tree",
+        o = {"<cmd>NvimTreeOpen<CR>","NvimTreeOpen"},
+        c = {"<cmd>NvimTreeClose<CR>","NvimTreeClose"}
+      }
     },
     l = {
+      name = "lsp tools",
       j = {"<cmd>Lspsaga diagnostic_jump_next<CR>","jump next file"},
       p = {"<cmd>Lspsaga diagnostic_jump_prev<CR>","jump previous file"},
       c = {"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>","to check the error"},
       k = {"<Cmd>Lspsaga hover_doc<CR>","hover doc"},
       ['sh'] = {"<Cmd>Lspsaga signature_help<CR>","signature help"},
       g = {
+        name = "lsp symbol help",
         d = {"<Cmd>Lspsaga peek_definition<CR>","preview definition"},
         f = {"<Cmd>Lspsaga finder<CR>","finder"},
         g = {"<cmd>lua vim.lsp.buf.definition()<CR>","go to the definition"}
@@ -41,14 +38,20 @@ wk.register({
     },
     ["ot"] = {"<Cmd>Lspsaga term_toggle<CR>","open terminal"},
     t = {
+      name = "tab",
       ['f'] = {"<cmd>tabnew","open the file on new tab"},
       n = {"<cmd>tabn<CR>","open the next tab"},
       p = {"<cmd>tabp<CR>","open the pervious tab"},
     },
     s = {
+      name = "split window",
       p = {"<cmd>sp<CR>","Horizontal split window"},
       v = {"<cmd>vsp<CR>","Vertcal split window"},
     },
+    r = {
+      name = "rust",
+      h = {":RustHoverActions<CR>","rust hover action"},
+    }
   }
 })
 
