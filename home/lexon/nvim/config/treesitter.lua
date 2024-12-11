@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup {  
 
   highlight = {
     enable = true,                -- 启用语法高亮
@@ -8,7 +8,7 @@ require'nvim-treesitter.configs'.setup {
     extended_mode = true,
   },
   autotag = {
-    enable = true,
+    enable = false,
   },
   incremental_selection = {
     enable = true,
