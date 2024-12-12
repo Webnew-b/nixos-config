@@ -1,16 +1,18 @@
-{pkgs, ...}:
+{pkgs, pkgs24_05,...}:
 {
     programs.neovim = {
       enable = true;
 
       plugins = with pkgs.vimPlugins; [
+        tokyonight-nvim
+
         nvim-lspconfig
-        (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+        (pkgs24_05.vimPlugins.nvim-treesitter.withPlugins (_: pkgs24_05.tree-sitter.allGrammars))
         lspsaga-nvim
 
-        nui-nvim
-        nvim-notify
-        noice-nvim
+        #pkgs24_05.vimPlugins.nui-nvim
+        pkgs24_05.vimPlugins.nvim-notify
+        pkgs24_05.vimPlugins.noice-nvim
 
         cmp-nvim-lsp
         cmp-buffer

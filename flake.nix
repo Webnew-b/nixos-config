@@ -4,6 +4,7 @@
     self
     ,nixpkgs
     ,home-manager
+    ,nixpkgs24_05
     ,... 
   }: 
 
@@ -17,6 +18,14 @@
         };
         overlays = [ ];
      });
+    pkgs24_05 = (import nixpkgs24_05 {
+        system = systemSettings.system;
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = true;
+        };
+        overlays = [ ];
+    });
 
     userSettings = rec {
       username = "lexon";
@@ -68,6 +77,7 @@
            home-manager.useUserPackages = true;
            home-manager.users.lexon = import ./home/lexon;
            home-manager.extraSpecialArgs = {
+               inherit pkgs24_05;
                inherit userSettings;
                inherit networkSettings;
            };
@@ -83,6 +93,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs24_05.url = "github:nixos/nixpkgs/nixos-24.11";
     gomod2nix.url = "github:nix-community/gomod2nix";
   };
 

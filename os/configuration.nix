@@ -37,7 +37,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
@@ -120,7 +120,7 @@ rZ5DQE8M73lr5PEBm35L9cBqqwoaeVGjhaVPCg1fymC1ZF3gR9CwSd96DFPbubHN
     home-manager
     tcpdump
     xclip
-    nerdfonts
+    nerd-fonts._0xproto
     docker
     openssl
   ];
@@ -128,13 +128,13 @@ rZ5DQE8M73lr5PEBm35L9cBqqwoaeVGjhaVPCg1fymC1ZF3gR9CwSd96DFPbubHN
   #fonts
   fonts = {
     packages = with pkgs; [
-      pkgs.nerdfonts
+      nerd-fonts._0xproto
       noto-fonts
       source-han-sans
       source-han-serif
-      noto-fonts-cjk
-      noto-fonts-emoji
-      nerdfonts
+      #noto-fonts-cjk
+      #noto-fonts-emoji
+      #nerdfonts
       twemoji-color-font
     ];
   };

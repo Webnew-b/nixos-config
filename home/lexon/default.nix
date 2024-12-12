@@ -1,4 +1,4 @@
-{ config, pkgs, lib, networkSettings, ... }:
+{ config, pkgs,pkgs24_05, lib, networkSettings, ... }:
 
 let
   goConfig = import ./go/config.nix;
@@ -45,6 +45,7 @@ in
     # 如下是我常用的一些命令行工具，你可以根据自己的需要进行增删
     neofetch
     nnn # terminal file manager
+    tree-sitter
 
     # archives
     zip
@@ -117,8 +118,8 @@ in
     # lsp
     lua-language-server
     nodePackages.typescript-language-server
-    buf-language-server
-    buf
+    # buf-language-server
+    # buf
     haskellPackages.haskell-language-server
 
     #env
@@ -128,7 +129,7 @@ in
     #python
     python3
     python311Packages.python-lsp-server
-    nodePackages.pyright
+    pyright
     #go
     gopls
     protobuf
@@ -150,7 +151,7 @@ in
     #rust
     rustc
     cargo
-    rust-analyzer
+    pkgs24_05.rust-analyzer
     rustfmt
     #solana
     solana-cli
