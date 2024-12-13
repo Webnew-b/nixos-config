@@ -46,6 +46,7 @@ in
     neofetch
     nnn # terminal file manager
     tree-sitter
+    helix
 
     # archives
     zip
