@@ -8,10 +8,10 @@
 
         nvim-lspconfig
         (pkgs24_05.vimPlugins.nvim-treesitter.withPlugins (_: pkgs24_05.tree-sitter.allGrammars))
-        lspsaga-nvim
+        pkgs24_05.vimPlugins.lspsaga-nvim
 
         #pkgs24_05.vimPlugins.nui-nvim
-        pkgs24_05.vimPlugins.nvim-notify
+        nvim-notify
         pkgs24_05.vimPlugins.noice-nvim
 
         cmp-nvim-lsp
@@ -34,7 +34,7 @@
         nvim-ts-autotag
         nvim-autopairs
 
-        rust-tools-nvim
+        pkgs24_05.vimPlugins.rust-tools-nvim
       ];
 
       extraPackages = with pkgs; [gcc ripgrep fd statix deadnix];
