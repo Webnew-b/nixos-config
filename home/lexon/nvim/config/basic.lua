@@ -109,3 +109,11 @@ vim.cmd [[hi FloatBorder guifg=white guibg=#002b36]]
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+
+-- 自动加载项目本地配置
+local local_config = vim.fn.getcwd() .. "/.nvim.lua"
+if vim.fn.filereadable(local_config) == 1 then
+    dofile(local_config)
+end
+

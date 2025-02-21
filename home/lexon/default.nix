@@ -47,6 +47,7 @@ in
     nnn # terminal file manager
     tree-sitter
     helix
+    nix-prefetch
 
     # archives
     zip
@@ -64,6 +65,12 @@ in
     zlib
     pkg-config
     nix-ld
+    gnumake
+    perl
+    libgcc
+    libgudev
+    pkg-config
+
 
     # networking tools
     mtr # A network diagnostic tool
@@ -154,6 +161,7 @@ in
     cargo
     pkgs24_05.rust-analyzer
     rustfmt
+    clippy
     #solana
     solana-cli
     anchor

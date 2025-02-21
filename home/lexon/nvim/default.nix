@@ -33,6 +33,7 @@
 
         nvim-ts-autotag
         nvim-autopairs
+        nvim-lsp-ts-utils
 
         pkgs24_05.vimPlugins.rust-tools-nvim
       ];
