@@ -48,6 +48,7 @@ in
     tree-sitter
     helix
     nix-prefetch
+    inetutils
 
     # archives
     zip
