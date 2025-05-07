@@ -60,7 +60,7 @@ lsp.hls.setup{
   settings = {
     haskell = {
       cabel = {
-        cabelPath = "cabel",
+        cabelPath = "cabal",
         cabalV2Build = true,
         cabalSandboxConfig = nil,
         cabalConfig = nil,

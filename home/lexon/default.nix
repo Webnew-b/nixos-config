@@ -71,7 +71,7 @@ in
     libgcc
     libgudev
     pkg-config
-
+    zola
 
     # networking tools
     mtr # A network diagnostic tool
